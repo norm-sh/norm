@@ -56,6 +56,7 @@ async function main() {
         repo: context.repo.repo,
         sha: process.env.GITHUB_SHA || "unknown",
         pr: prNumber,
+        branch: process.env.GITHUB_REF_NAME,
       });
       core.info("Upload successful!");
     } catch (error) {

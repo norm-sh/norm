@@ -129,4 +129,5 @@ export type IngestRequest = {
   repo: string;
   pr?: number | string;
   sha: string;
+  branch?: string;
 };

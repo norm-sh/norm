@@ -31,6 +31,9 @@ export async function uploadArtifact(opts: UploadOptions) {
   formData.append("owner", metadata.owner);
   formData.append("repo", metadata.repo);
   formData.append("sha", metadata.sha);
+  if (metadata.branch) {
+    formData.append("branch", String(metadata.branch));
+  }
   if (metadata.pr) {
     formData.append("pr", String(metadata.pr));
   }
