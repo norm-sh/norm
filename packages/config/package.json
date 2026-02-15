@@ -1,5 +1,5 @@
 {
-  "name": "@wapmetrics/config",
+  "name": "@norm/config",
   "version": "0.1.0",
   "type": "module",
   "main": "src/index.ts",
@@ -8,7 +8,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@wapmetrics/schemas": "workspace:*"
+    "@norm/schemas": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.0.0"

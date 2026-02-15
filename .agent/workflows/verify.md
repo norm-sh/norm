@@ -1,5 +1,5 @@
 ---
-description: How to verify changes after making code edits in the wapmetrics monorepo
+description: How to verify changes after making code edits in the norm monorepo
 ---
 
 # Verification Workflow
@@ -44,6 +44,6 @@ Automatically fixes fixable lint issues.
 
 ## Common Issues
 
-- **Type errors**: Check that interfaces in `@wapmetrics/schemas` and `@wapmetrics/config` are in sync
+- **Type errors**: Check that interfaces in `@norm/schemas` and `@norm/config` are in sync
 - **Build fails but type-check passes**: Check `tsup.config.ts` in collector-action
 - **Lint errors**: Run `pnpm lint:fix` first, then manually fix remaining issues

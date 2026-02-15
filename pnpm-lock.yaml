@@ -29,13 +29,13 @@ importers:
       '@actions/github':
         specifier: ^6.0.0
         version: 6.0.1
-      '@wapmetrics/lhci-collector':
+      '@norm/lhci-collector':
         specifier: workspace:*
         version: link:../lhci-collector
-      '@wapmetrics/schemas':
+      '@norm/schemas':
         specifier: workspace:*
         version: link:../schemas
-      '@wapmetrics/uploader':
+      '@norm/uploader':
         specifier: workspace:*
         version: link:../uploader
       tar:
@@ -54,7 +54,7 @@ importers:
 
   packages/config:
     dependencies:
-      '@wapmetrics/schemas':
+      '@norm/schemas':
         specifier: workspace:*
         version: link:../schemas
     devDependencies:
@@ -64,10 +64,10 @@ importers:
 
   packages/lhci-collector:
     dependencies:
-      '@wapmetrics/config':
+      '@norm/config':
         specifier: workspace:*
         version: link:../config
-      '@wapmetrics/schemas':
+      '@norm/schemas':
         specifier: workspace:*
         version: link:../schemas
 
@@ -75,7 +75,7 @@ importers:
 
   packages/uploader:
     dependencies:
-      '@wapmetrics/schemas':
+      '@norm/schemas':
         specifier: workspace:*
         version: link:../schemas
     devDependencies:

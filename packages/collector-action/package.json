@@ -1,5 +1,5 @@
 {
-  "name": "wapmetrics-collector-action",
+  "name": "norm-collector-action",
   "version": "0.1.0",
   "private": true,
   "main": "dist/index.js",
@@ -10,9 +10,9 @@
   "dependencies": {
     "@actions/core": "^1.10.1",
     "@actions/github": "^6.0.0",
-    "@wapmetrics/lhci-collector": "workspace:*",
-    "@wapmetrics/schemas": "workspace:*",
-    "@wapmetrics/uploader": "workspace:*",
+    "@norm/lhci-collector": "workspace:*",
+    "@norm/schemas": "workspace:*",
+    "@norm/uploader": "workspace:*",
     "tar": "^7.4.0"
   },
   "devDependencies": {

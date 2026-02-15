@@ -1,5 +1,5 @@
 {
-  "name": "wapmetrics",
+  "name": "norm",
   "private": true,
   "workspaces": [
     "packages/*",

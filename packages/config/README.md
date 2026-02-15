@@ -1,6 +1,6 @@
-# @wapmetrics/config
+# @norm/config
 
-Configuration schemas and utilities for WAPMetrics.
+Configuration schemas and utilities for Norm.
 
 ## Usage
 

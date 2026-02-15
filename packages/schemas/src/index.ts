@@ -41,7 +41,7 @@ export type BundleLayout = {
 };
 
 export const ManifestSchema = {
-  $id: "https://schemas.wapmetrics.dev/manifest.schema.json",
+  $id: "https://schemas.norm.dev/manifest.schema.json",
   type: "object",
   additionalProperties: false,
   required: ["version", "plugins", "createdAt"],
@@ -100,7 +100,7 @@ export const ManifestSchema = {
 } as const;
 
 export const LhciSummarySchema = {
-  $id: "https://schemas.wapmetrics.dev/lhci-summary.schema.json",
+  $id: "https://schemas.norm.dev/lhci-summary.schema.json",
   type: "object",
   additionalProperties: false,
   required: ["summaries"],

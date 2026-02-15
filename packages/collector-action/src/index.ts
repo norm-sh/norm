@@ -2,18 +2,18 @@ import fsp from "node:fs/promises";
 import path from "node:path";
 import * as core from "@actions/core";
 import { context } from "@actions/github";
-import { makeManifest, runLhci } from "@wapmetrics/lhci-collector";
-import type { Manifest } from "@wapmetrics/schemas";
-import { uploadArtifact } from "@wapmetrics/uploader";
+import { makeManifest, runLhci } from "@norm/lhci-collector";
+import type { Manifest } from "@norm/schemas";
+import { uploadArtifact } from "@norm/uploader";
 import * as tar from "tar";
 
 async function main() {
   const configPath = core.getInput("config", { required: true });
-  const outTgz = core.getInput("out") || ".wapmetrics/wapmetrics-run.tgz";
+  const outTgz = core.getInput("out") || ".norm/norm-run.tgz";
   const token = core.getInput("token");
   const apiUrl = core.getInput("api-url");
 
-  const tmp = path.join(process.cwd(), ".wapmetrics/tmp");
+  const tmp = path.join(process.cwd(), ".norm/tmp");
   await fsp.mkdir(tmp, { recursive: true });
 
   const { config } = await runLhci({
@@ -43,10 +43,10 @@ async function main() {
   await tar.create({ gzip: true, file: outTgz, cwd: tmp }, ["."]);
   core.setOutput("artifact-path", outTgz);
 
-  core.info(`WAPMetrics artifacts packaged at ${outTgz}`);
+  core.info(`Norm artifacts packaged at ${outTgz}`);
 
   if (token) {
-    core.info("Uploading artifacts to WAPMetrics...");
+    core.info("Uploading artifacts to Norm...");
     try {
       await uploadArtifact({
         token,

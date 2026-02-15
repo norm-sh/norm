@@ -1,5 +1,5 @@
 ---
-description: How to add a new package to the wapmetrics monorepo
+description: How to add a new package to the norm monorepo
 ---
 
 # Adding a New Package Workflow
@@ -16,7 +16,7 @@ Create `packages/<package-name>/package.json`:
 
 ```json
 {
-  "name": "@wapmetrics/<package-name>",
+  "name": "@norm/<package-name>",
   "version": "0.1.0",
   "type": "module",
   "main": "src/index.ts",

@@ -51,19 +51,19 @@ jobs:
           }
           EOF
 
-      - name: Run WAPMetrics Action (Local Build)
+      - name: Run Norm Action (Local Build)
         uses: ./packages/collector-action
         with:
           config: "normrc.json"
-          token: ${{ secrets.WAPMETRICS_TOKEN }}
-          api-url: ${{ vars.WAPMETRICS_API_URL }} 
-          out: ".wapmetrics/wapmetrics-run.tgz"
+          token: ${{ secrets.NORM_TOKEN }}
+          api-url: ${{ vars.NORM_API_URL }} 
+          out: ".norm/norm-run.tgz"
 
       - name: Verify Artifact Exists
         run: |
-          if [ -f ".wapmetrics/wapmetrics-run.tgz" ]; then
+          if [ -f ".norm/norm-run.tgz" ]; then
             echo "Artifact created successfully!"
-            ls -l .wapmetrics/wapmetrics-run.tgz
+            ls -l .norm/norm-run.tgz
           else
             echo "Error: Artifact was not created."
             exit 1
@@ -72,6 +72,6 @@ jobs:
       - name: Upload Artifact to GitHub
         uses: actions/upload-artifact@v4
         with:
-          name: wapmetrics-run
-          path: .wapmetrics/wapmetrics-run.tgz
+          name: norm-run
+          path: .norm/norm-run.tgz
 

@@ -2,13 +2,13 @@ import type { SpawnOptions } from "node:child_process";
 import { spawn } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
-import { loadConfig, type NormRc, transformConfig } from "@wapmetrics/config";
+import { loadConfig, type NormRc, transformConfig } from "@norm/config";
 import type {
   BudgetConfig,
   LhciSummaryItem,
   Manifest,
   RouteConfig,
-} from "@wapmetrics/schemas";
+} from "@norm/schemas";
 
 const sh = (cmd: string, args: string[], opts: SpawnOptions = {}) =>
   new Promise<number>((resolve) => {

@@ -1,5 +1,5 @@
 {
-  "name": "@wapmetrics/lhci-collector",
+  "name": "@norm/lhci-collector",
   "version": "0.1.0",
   "type": "module",
   "main": "src/index.ts",
@@ -8,7 +8,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@wapmetrics/schemas": "workspace:*",
-    "@wapmetrics/config": "workspace:*"
+    "@norm/schemas": "workspace:*",
+    "@norm/config": "workspace:*"
   }
 }

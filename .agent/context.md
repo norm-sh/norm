@@ -1,18 +1,18 @@
-# WAPMetrics (Norm) - Project Context
+# Norm - Project Context
 
 ## Overview
 
-WAPMetrics is a web performance monitoring tool built on top of Lighthouse CI. It uses a custom configuration format (`normrc.json`) that gets transformed into LHCI-compatible configs.
+Norm is a web performance monitoring tool built on top of Lighthouse CI. It uses a custom configuration format (`normrc.json`) that gets transformed into LHCI-compatible configs.
 
 ## Architecture
 
 ```
-wapmetrics/
+norm/
 ├── packages/
 │   ├── schemas/         # Shared TypeScript types (Manifest, LhciSummaryItem)
 │   ├── config/          # normrc.json loader + transformer to LHCI format
 │   ├── lhci-collector/  # Runs LHCI with config, outputs reports
-│   ├── uploader/        # Uploads artifacts to WAPMetrics API
+│   ├── uploader/        # Uploads artifacts to Norm API
 │   └── collector-action/# GitHub Action entrypoint (bundles everything)
 ```
 
@@ -44,11 +44,11 @@ wapmetrics/
 2. `loadConfig()` reads and validates the file
 3. `transformConfig()` converts to LHCI format
 4. `runLhci()` executes Lighthouse CI with the transformed config
-5. Results are packaged into `wapmetrics-run.tgz` with a manifest
+5. Results are packaged into `norm-run.tgz` with a manifest
 
 ## Conventions
 
 - All packages use TypeScript with ES modules (`"type": "module"`)
-- Shared types go in `@wapmetrics/schemas`
+- Shared types go in `@norm/schemas`
 - The collector-action is bundled with `tsup` for GitHub Actions compatibility
 - Config validation happens in `loadConfig()`, transformation in `transformConfig()`

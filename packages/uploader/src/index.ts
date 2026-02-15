@@ -1,5 +1,5 @@
 import fs from "node:fs";
-import type { IngestRequest } from "@wapmetrics/schemas";
+import type { IngestRequest } from "@norm/schemas";
 
 export type UploadOptions = IngestRequest & {
   token: string;
@@ -25,7 +25,7 @@ export async function uploadArtifact(opts: UploadOptions) {
   const fileBuffer = fs.readFileSync(bundlePath);
   const fileBlob = new Blob([fileBuffer]);
 
-  formData.append("bundle", fileBlob, "wapmetrics-run.tgz");
+  formData.append("bundle", fileBlob, "norm-run.tgz");
 
   // Append metadata
   formData.append("owner", metadata.owner);
