@@ -1,0 +1,26 @@
+name: "Norm Collector (LHCI)"
+description: "Runs LHCI collector and packages artifacts into norm-run.tgz"
+branding:
+  color: "blue"
+  icon: "activity"
+author: "you"
+runs: { using: "node20", main: "dist/index.js" }
+inputs:
+  config:
+    description: "Path to normrc.json configuration file"
+    required: true
+    default: "normrc.json"
+  out:
+    description: "Output tgz path"
+    required: false
+    default: ".norm/norm-run.tgz"
+  token:
+    description: "Norm API Token (optional - enables upload)"
+    required: false
+  api-url:
+    description: "Norm API URL"
+    required: false
+    default: "https://api.norm.dev/v1/ingest"
+outputs:
+  artifact-path:
+    description: "Path to produced tgz"
