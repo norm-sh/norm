@@ -17,10 +17,6 @@ inputs:
   token:
     description: "Norm API Token (optional - enables upload)"
     required: false
-  api-url:
-    description: "Norm API URL"
-    required: false
-    default: "https://api.norm.dev/v1/ingest"
 outputs:
   artifact-path:
     description: "Path to produced tgz"

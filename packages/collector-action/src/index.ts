@@ -11,7 +11,7 @@ async function main() {
   const configPath = core.getInput("config", { required: true });
   const outTgz = core.getInput("out") || ".norm/norm-run.tgz";
   const token = core.getInput("token");
-  const apiUrl = core.getInput("api-url");
+  const apiUrl = process.env.NORM_API_URL || "https://api.norm.sh";
 
   const tmp = path.join(process.cwd(), ".norm/tmp");
   await fsp.mkdir(tmp, { recursive: true });

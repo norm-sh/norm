@@ -53,10 +53,11 @@ jobs:
 
       - name: Run Norm Action (Local Build)
         uses: ./packages/collector-action
+        env:
+          NORM_API_URL: ${{ vars.NORM_API_URL }}
         with:
           config: "normrc.json"
           token: ${{ secrets.NORM_TOKEN }}
-          api-url: ${{ vars.NORM_API_URL }} 
           out: ".norm/norm-run.tgz"
 
       - name: Verify Artifact Exists
