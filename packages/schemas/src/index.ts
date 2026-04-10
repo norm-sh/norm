@@ -30,6 +30,7 @@ export type LhciSummaryItem = {
   cls?: number;
   inp?: number;
   tbt?: number;
+  performanceScore?: number;
   htmlReportPath?: string;
 };
 
@@ -117,6 +118,7 @@ export const LhciSummarySchema = {
           cls: { type: "number" },
           inp: { type: "number" },
           tbt: { type: "number" },
+          performanceScore: { type: "number" },
           htmlReportPath: { type: "string" },
         },
       },
