@@ -92,6 +92,7 @@ export async function runLhci(opts: RunOptions): Promise<RunResult> {
       cls: audits["cumulative-layout-shift"]?.numericValue,
       inp: audits["interaction-to-next-paint"]?.numericValue,
       tbt: audits["total-blocking-time"]?.numericValue,
+      performanceScore: rpt.categories?.performance?.score,
       htmlReportPath: path.basename(entry.htmlPath), // Store just the filename
     });
   }
